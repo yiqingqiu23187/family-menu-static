@@ -1,0 +1,25 @@
+styles.css
+  s_227579e5a16fb9::t_05abb1247ed06f 1-2,16-18
+index.html
+  s_227579e5a16fb9::t_05abb1247ed06f 11-12
+README.md
+  s_227579e5a16fb9::t_05abb1247ed06f 38,47-50
+fonts/OFL-ZCOOL-KuaiLe.txt
+  s_227579e5a16fb9::t_8bc83efa906cb2 1-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "a2c1ef5c09a515adaeb65c5a17bc6844e66af227",
+  "prompts": {},
+  "sessions": {
+    "s_227579e5a16fb9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a167b6-dabb-7443-b11c-a8df120c070a",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "huangzihao <huangzihao@xiaohongshu.com>"
+    }
+  }
+}

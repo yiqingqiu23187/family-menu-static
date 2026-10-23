@@ -1,0 +1,19 @@
+README.md
+  s_227579e5a16fb9::t_d2ad0e6f2bb01e 1-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "42daf5596375d880a7ef610626ccfbdcc916cb02",
+  "prompts": {},
+  "sessions": {
+    "s_227579e5a16fb9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a167b6-dabb-7443-b11c-a8df120c070a",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "huangzihao <huangzihao@xiaohongshu.com>"
+    }
+  }
+}

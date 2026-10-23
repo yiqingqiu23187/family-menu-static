@@ -1,8 +1,8 @@
-# 家常 · 两个人的餐桌
+# 🍊 橘橘大王的御膳房
 
 完全静态的家庭点菜网页。没有安装步骤、构建依赖、数据库或自建后端。
 
-[打开家常菜单](https://yiqingqiu23187.github.io/family-menu-static/)
+[打开橘橘大王的御膳房](https://yiqingqiu23187.github.io/family-menu-static/)
 
 ## 怎么用
 

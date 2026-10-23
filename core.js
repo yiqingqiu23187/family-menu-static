@@ -17,7 +17,7 @@
   function buildMessage(order) {
     const names = order.items.map(item => item.name + (item.count > 1 ? "×" + item.count : ""));
     const title = (order.meal + "想吃：" + names.join("、")).slice(0,80);
-    const lines = ["家常 · " + order.meal + "点单", order.time, "", ...order.items.map(item => "• " + item.name + " × " + item.count), "", "共 " + order.items.reduce((sum,item) => sum + item.count,0) + " 份", "备注：" + (order.remark.trim() || "没有特别要求，主厨自由发挥。"), "", "订单号：" + order.id, "你来点，我来做。"];
+    const lines = ["橘橘大王的御膳房 · " + order.meal + "点单", order.time, "", ...order.items.map(item => "• " + item.name + " × " + item.count), "", "共 " + order.items.reduce((sum,item) => sum + item.count,0) + " 份", "备注：" + (order.remark.trim() || "没有特别要求，主厨自由发挥。"), "", "订单号：" + order.id, "你来点，我来做。"];
     return { title, desp: lines.join("\n"), text: lines.join("\n") };
   }
   async function send(key, message, fetcher = fetch, timeout = 15000) {

@@ -1,7 +1,7 @@
 // 修改这里即可更新菜单。照片可选，放在 images/ 中并填写 image；未配照片时显示文字封面。
 // SendKey 请在页面「通知设置」中填写，不要写进这个文件。
 window.FAMILY_MENU = {
-  title: "家常",
+  title: "橘橘大王的御膳房",
   categories: ["全部", "牛肉", "鸡肉排骨", "海鲜", "小炒时蔬"],
   dishes: [
     { id: "pepper-beef", name: "小炒黄牛肉", category: "牛肉", image: "images/pepper-beef.jpg", description: "小炒一盘，记得多煮一点饭。", tag: "超下饭" },

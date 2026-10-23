@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="你来点，我来做。两个人的家常菜单。">
+  <meta name="referrer" content="no-referrer">
+  <title>家常 · 今天想吃什么</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./menu.js" defer></script>
+  <script src="./core.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="家常，返回首页"><span class="brand-seal">家常</span><span class="brand-caption">两个人的餐桌</span></a>
+    <button class="text-button settings-trigger" id="open-settings" type="button"><span class="connection-dot" id="connection-dot"></span><span id="connection-label">设置微信通知</span><span aria-hidden="true">↗</span></button>
+  </header>
+  <main class="page-layout">
+    <section class="menu-section" aria-labelledby="page-title">
+      <div class="intro">
+        <p class="eyebrow"><span class="small-line"></span> GOOD FOOD, GOOD COMPANY</p>
+        <h1 id="page-title">今天，<br>想吃点<span>什么？</span></h1>
+        <p class="intro-copy">你来点，我来做。<br class="mobile-break">把想吃的，留给最懂你的人。</p>
+        <div class="intro-bottom"><span class="menu-date" id="menu-date"></span><span class="hand-note">好好吃饭，好好在一起。</span></div>
+      </div>
+      <div class="menu-toolbar">
+        <div class="category-tabs" id="categories" role="group" aria-label="菜品分类"></div>
+        <span class="menu-total" id="menu-total"></span>
+      </div>
+      <div class="dish-grid" id="dishes"></div>
+      <footer class="menu-footer"><span>MADE AT HOME, WITH LOVE.</span><span>厨房今天也营业</span></footer>
+    </section>
+    <aside class="order-panel" id="order-panel" aria-labelledby="order-title">
+      <div class="order-heading"><div><p class="eyebrow">YOUR LITTLE ORDER</p><h2 id="order-title">这一餐，吃这些</h2></div><button class="close-button mobile-only" id="close-cart" type="button" aria-label="关闭已选菜单">×</button></div>
+      <div class="meal-toggle" role="group" aria-label="用餐时间"><button type="button" data-meal="午餐">午餐</button><button type="button" data-meal="晚餐">晚餐</button></div>
+      <div class="order-items" id="order-items"></div>
+      <div class="order-divider"></div>
+      <label class="field-label" for="remark">给主厨的小纸条 <span>选填</span></label>
+      <textarea id="remark" rows="3" maxlength="300" placeholder="比如：少一点辣，多一点爱。"></textarea>
+      <div class="note-chips" aria-label="快捷口味备注"><button type="button" data-note="少辣">少辣</button><button type="button" data-note="少盐">少盐</button><button type="button" data-note="不要香菜">不要香菜</button></div>
+      <div class="order-total"><span>今天的期待</span><strong><span id="total-count">0</span> <small>份</small></strong></div>
+      <button class="primary-button send-button" id="send-order" type="button" disabled><span>发给主厨</span><span aria-hidden="true">↗</span></button>
+      <button class="copy-button" id="copy-order" type="button" disabled>复制菜单，微信发给 TA</button>
+      <p class="order-help" id="order-help">选好菜，再把期待告诉主厨。</p>
+      <div class="order-status" id="order-status" role="status" hidden></div>
+      <button class="text-button start-over" id="start-over" type="button" hidden>开始下一单</button>
+    </aside>
+  </main>
+  <button class="cart-backdrop" id="cart-backdrop" type="button" aria-label="关闭已选菜单" hidden></button>
+  <div class="mobile-cart-bar"><button type="button" id="open-cart"><span class="cart-count" id="mobile-count">0</span><span id="mobile-summary">今天想吃什么？</span><strong>看看已选 <span aria-hidden="true">↗</span></strong></button></div>
+  <dialog id="settings-dialog" aria-labelledby="settings-title">
+    <div class="dialog-heading"><span class="eyebrow">A NOTE TO THE CHEF</span><button type="button" class="close-button" id="close-settings" aria-label="关闭通知设置">×</button></div>
+    <h2 id="settings-title">把菜单送到微信</h2>
+    <p class="dialog-intro">在点菜的这台手机上设置一次，以后选好菜就能发给主厨。</p>
+    <form id="settings-form">
+      <label class="field-label" for="sendkey">Server酱 SendKey</label>
+      <div class="key-field"><input id="sendkey" type="password" placeholder="粘贴以 SCT 开头的 SendKey" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="160"><button id="toggle-key" type="button" aria-label="显示 SendKey">显示</button></div>
+      <p class="field-help">只保存在当前浏览器。换手机或清除浏览器数据后，需要重新填写。</p>
+      <p class="field-error" id="settings-error" role="alert" hidden></p>
+      <button class="primary-button" type="submit">保存设置</button>
+    </form>
+    <div class="settings-links"><a href="https://sct.ftqq.com/" target="_blank" rel="noopener noreferrer">去 Server酱获取 SendKey ↗</a><button class="text-button" id="forget-key" type="button">清除密钥</button></div>
+    <p class="settings-footnote">通知发送到主厨绑定的微信通道，菜品和备注会交给 Server酱处理。保存设置不会发送消息。</p>
+  </dialog>
+  <dialog id="copy-dialog" aria-labelledby="copy-title"><div class="dialog-heading"><h2 id="copy-title">复制这份小菜单</h2><button type="button" class="close-button" id="close-copy" aria-label="关闭复制菜单">×</button></div><p class="dialog-intro">长按下方文字复制，再发给主厨。</p><textarea id="copy-content" rows="10" readonly></textarea></dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <noscript><p>请开启浏览器 JavaScript 后使用点菜功能。</p></noscript>
+</body>
+</html>

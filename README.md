@@ -35,7 +35,7 @@ python3 -m http.server 8765
 
 ## 实现与边界
 
-- 原生 HTML、CSS、JavaScript，所有页面资源随项目提供，无第三方运行时脚本或字体。
+- 原生 HTML、CSS、JavaScript，所有页面资源随项目提供，无第三方运行时脚本；字体随站点提供，不依赖外部字体服务。
 - 购物车、备注和当前发送状态只保存在本浏览器，不作为共享订单数据库。
 - 通过 HTTPS、CORS、POST 调用 Server酱；不使用不透明的 `no-cors` 请求冒充成功。
 - 一次最多 9 份同名菜品；支持网络异常提示、订单号、重复点击保护和复制菜单备用。
@@ -44,3 +44,7 @@ python3 -m http.server 8765
 ## 图片来源
 
 起始菜品照片取自 [vinsonhi/family-food-menu](https://github.com/vinsonhi/family-food-menu) 的 `miniprogram/images/smaller/`（提交 `d2e572a`）。原仓库声明仅供学习使用、未经允许不得商用。此页面用于个人家庭使用；图片不纳入任何额外开源授权。用于其他场景时请换成自己的照片或取得相应授权。
+
+## 字体来源
+
+店名、标题和菜名使用 [站酷快乐体 ZCOOL KuaiLe](https://github.com/googlefonts/zcool-kuaile)，Copyright 2018 The ZCOOL KuaiLe Project Authors，遵循 SIL Open Font License 1.1。字体从 Google Fonts 官方仓库取得，转为 WOFF2 格式后随页面提供；完整许可证见 `fonts/OFL-ZCOOL-KuaiLe.txt`。未覆盖的生僻字使用系统中文字体补全。

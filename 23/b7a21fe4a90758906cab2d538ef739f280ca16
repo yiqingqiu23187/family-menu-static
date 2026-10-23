@@ -1,0 +1,29 @@
+styles.css
+  s_227579e5a16fb9::t_691787e260dc77 12
+index.html
+  s_227579e5a16fb9::t_691787e260dc77 7,9-13,18
+core.js
+  s_227579e5a16fb9::t_691787e260dc77 20
+README.md
+  s_227579e5a16fb9::t_691787e260dc77 1,5
+menu.js
+  s_227579e5a16fb9::t_691787e260dc77 4
+favicon.svg
+  s_227579e5a16fb9::t_691787e260dc77 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "23b7a21fe4a90758906cab2d538ef739f280ca16",
+  "prompts": {},
+  "sessions": {
+    "s_227579e5a16fb9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a167b6-dabb-7443-b11c-a8df120c070a",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "huangzihao <huangzihao@xiaohongshu.com>"
+    }
+  }
+}

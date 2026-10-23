@@ -40,6 +40,11 @@
   function changed() { state.result = null; state.attempt = null; persist(); }
   function toast(message) { $("toast").textContent = message; $("toast").hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => $("toast").hidden = true, 2800); }
   function imageFor(dish, eager = false) {
+    if (!dish.image) {
+      const cover = node("div", "dish-placeholder"); cover.dataset.tone = dish.tone || "greens"; cover.setAttribute("aria-hidden", "true");
+      cover.append(node("span", "placeholder-mark", dish.symbol || "家"), node("span", "placeholder-caption", "家 常 好 味"));
+      return cover;
+    }
     const img = node("img"); img.src = dish.image; img.alt = dish.name; img.loading = eager ? "eager" : "lazy"; img.decoding = "async";
     img.addEventListener("error", () => { img.src = "./favicon.svg"; img.classList.add("image-fallback"); }, { once:true });
     return img;
